@@ -3,12 +3,87 @@
 @{    
     ViewData["Title"] = "Home page";
 }
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+
+    p {
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0062cc;
+        border-color: #005cbf;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: #fff;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+</style>
+
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">@ViewData["Title"]</div>
+                <div class="card-body">
+                    <div class="media">
+                        <img src="/redpanda.jpg" class="align-self-center mr-3" alt="Red panda">
+                        <div class="media-body">
+                            <h5 class="mt-0">About us</h5>
+                            <p>We are a team of animal lovers and nature enthusiasts who are dedicated to sharing our passion with the world. Through our blog, gallery, and other features, we hope to inspire others to appreciate the beauty and diversity of life on Earth, and to take action to protect it.</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <h5>Explore now:</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a class="btn btn-primary btn-lg btn-block mb-3" href="/blog">Blog</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="btn btn-secondary btn-lg btn-block mb-3" href="/gallery">Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
 
 <div class="jumbotron">
     <h1>LSP_HOME</h1>
-    <p class="lead">LSP's home.</p>
-    <link rel="icon" type="image/png" href="/redpanda.jpg" />
+    <p class="lead">Welcome to LSP's home! This is a place where you can find all kinds of interesting things!</p>
+    <hr class="my-4">
+    <p>Explore now:</p>
+    <a class="btn btn-primary btn-lg" href="/blog">Blog</a>
+    <a class="btn btn-secondary btn-lg" href="/gallery">Gallery</a>
 </div>
+
 
 <script>
     updateVisitCount();
