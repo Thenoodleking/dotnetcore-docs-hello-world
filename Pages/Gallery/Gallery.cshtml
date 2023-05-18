@@ -2,7 +2,7 @@
 
 <style>
     /* 在这里添加您的CSS样式 */
-
+    body {background-color: powderblue;}
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -13,17 +13,41 @@
         width: 100%;
         border-radius: 5px;
     }
+
+    .gallery a {
+        display: inline-block;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
 </style>
 
 <div class="container pt-5">
-    <h1>青楼梦·万晓慈-不负初心不负卿</h1>
+    <h1 style="color:blue;">青楼梦·万晓慈-不负初心不负卿</h1>
     <div class="gallery">
     @for(int i=1; i<=33; i++)
     {
-        <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
+        <a href="#" data-src="/gallery/@(i.ToString() + ".png")">
+            <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
+        </a>
     }
     @for(int i=34; i<=42; i++)
     {
-        <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i">
+        <a href="#" data-src="/gallery/@(i.ToString() + ".jpg")">
+            <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i">
+        </a>
     }
+    </div>
 </div>
+
+<script>
+  const galleryImages = document.querySelectorAll('.gallery a');
+
+  galleryImages.forEach(image => {
+    image.addEventListener('dblclick', function(event) {
+      event.preventDefault();
+
+      const url = this.getAttribute('data-src');
+      window.open(url, '_blank');
+    });
+  });
+</script>
