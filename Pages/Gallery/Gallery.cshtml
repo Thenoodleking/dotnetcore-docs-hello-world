@@ -20,7 +20,7 @@
     <div class="gallery">
     @for(int i=27; i<=33; i++)
     {
-        <img src="/gallery/@i.png" alt="图片 @i">
+        <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
     }
     @for(int i=34; i<=42; i++)
     {
