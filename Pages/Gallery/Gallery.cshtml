@@ -26,13 +26,13 @@
     <div class="gallery">
     @for(int i=1; i<=33; i++)
     {
-        <a href="#" data-src="/gallery/@(i.ToString() + ".png")">
+        <a href="/gallery/@(i.ToString() + ".png")" target="_blank">
             <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
         </a>
     }
     @for(int i=34; i<=42; i++)
     {
-        <a href="#" data-src="/gallery/@(i.ToString() + ".jpg")">
+        <a href="/gallery/@(i.ToString() + ".jpg")" target="_blank">
             <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i">
         </a>
     }
@@ -43,11 +43,11 @@
   const galleryImages = document.querySelectorAll('.gallery a');
 
   galleryImages.forEach(image => {
-    image.addEventListener('dblclick', function(event) {
+    image.addEventListener('click', function(event) {
       event.preventDefault();
 
-      const url = this.getAttribute('data-src');
-      window.open(url, '_blank');
+      const url = this.getAttribute('href');
+      window.open(url, 'mywindow');
     });
   });
 </script>
