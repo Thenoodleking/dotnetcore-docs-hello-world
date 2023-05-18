@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/dotnetcoresample.styles.css" asp-append-version="true" />
     <link rel="icon" type="image/png" href="/redpanda.jpg" />
+    <script>
+        function updateVisitCount() {
+            $.getJSON('/api/visit-count', function (data) {
+                $('#visit-count').text(data.count);
+            });
+        }
+
+        function updateTime() {
+            var now = new Date();
+            var datetime = now.toLocaleString();
+            $('#datetime').text(datetime);
+        }
+
+        $(function () {
+            updateVisitCount();
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
 
 </head>
 <body>
@@ -49,5 +68,13 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <div class="navbar">
+    <div class="container">
+        <span id="datetime"></span>
+        <span id="visit-count" class="ml-auto"></span>
+    </div>
+</div>
+
 </body>
 </html>
