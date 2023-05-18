@@ -18,13 +18,14 @@
 <div class="container pt-5">
     <h1>青楼梦·万晓慈-不负初心不负卿</h1>
     <div class="gallery">
-        @for(int i=27; i<=33; i++)
-        {
-            <img src="/gallery/@i.png" alt="图片 @i">
-        }
-        @for(int i=34; i<=42; i++)
-        {
-            <img src="/gallery/@i.jpg" alt="图片 @i">
-        }
-    </div>
+    @for(int i=27; i<=33; i++)
+    {
+        <img src="/gallery/@i.png" alt="图片 @i">
+    }
+    @for(int i=34; i<=42; i++)
+    {
+        <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i">
+    }
+</div>
+
 </div>
