@@ -1,46 +1,11 @@
 ﻿@page
-@model IndexModel
-@{    
-    ViewData["Title"] = "Home page";
+@model LSP_HOME.Pages.IndexModel
+@{
+    ViewData["Title"] = Model.Title;
 }
+
 <style>
-    body {
-        background-color: #f8f9fa;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    h1 {
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 48px;
-        margin-bottom: 20px;
-        color: #343a40;
-    }
-
-    p {
-        color: #6c757d;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    .btn-primary:hover {
-        background-color: #0062cc;
-        border-color: #005cbf;
-    }
-
-    .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
-        color: #fff;
-    }
-
-    .btn-secondary:hover {
-        background-color: #5a6268;
-        border-color: #545b62;
-    }
+    /* 样式代码 */
 </style>
 
 <body>
@@ -50,23 +15,7 @@
             <div class="card">
                 <div class="card-header">@ViewData["Title"]</div>
                 <div class="card-body">
-                    <div class="media">
-                        <img src="/redpanda.jpg" class="align-self-center mr-3" alt="Red panda">
-                        <div class="media-body">
-                            <h5 class="mt-0">About us</h5>
-                            <p>We are a team of animal lovers and nature enthusiasts who are dedicated to sharing our passion with the world. Through our blog, gallery, and other features, we hope to inspire others to appreciate the beauty and diversity of life on Earth, and to take action to protect it.</p>
-                        </div>
-                    </div>
-                    <hr class="my-4">
-                    <h5>Explore now:</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a class="btn btn-primary btn-lg btn-block mb-3" href="/blog">Blog</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-secondary btn-lg btn-block mb-3" href="/gallery">Gallery</a>
-                        </div>
-                    </div>
+                    <!-- 卡片内容 -->
                 </div>
             </div>
         </div>
@@ -82,6 +31,7 @@
     <p>Explore now:</p>
     <a class="btn btn-primary btn-lg" href="/blog">Blog</a>
     <a class="btn btn-secondary btn-lg" href="/gallery">Gallery</a>
+    <a class="btn btn-info btn-lg" href="/home/chatbot">Chatbot</a>
 </div>
 <!-- HTML -->
 <div id="datetime"></div>
@@ -103,7 +53,8 @@ function displayDateTime() {
 setInterval(displayDateTime, 1000);
 </script>
 
-
+<!-- Visit Count Script -->
+<script src="~/js/visitcount.js"></script>
 <script>
     updateVisitCount();
 </script>
