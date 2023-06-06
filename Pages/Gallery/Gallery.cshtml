@@ -126,19 +126,31 @@
     @for(int i=1; i<=33; i++)
     {
         <a href="/gallery/@(i.ToString() + ".png")" target="_blank">
-            <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
+            <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i"
+            data-preview-src="/gallery/@(i.ToString() + ".png")"
+                     data-preview-width="600"
+                     data-preview-height="400"
+            title="@imageTitles[i-1]">
         </a>
     }
     @for(int i=34; i<=42; i++)
     {
         <a href="/gallery/@(i.ToString() + ".jpg")" target="_blank">
-            <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i">
+            <img src="/gallery/@(i.ToString() + ".jpg")" alt="图片 @i"
+            data-preview-src="/gallery/@(i.ToString() + ".jpg")"
+                     data-preview-width="600"
+                     data-preview-height="400"
+            title="@imageTitles[i-1]">
         </a>
     }
     @for(int i=43; i<=94; i++)
     {
         <a href="/gallery/@(i.ToString() + ".png")" target="_blank">
-            <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i">
+            <img src="/gallery/@(i.ToString() + ".png")" alt="图片 @i"
+            data-preview-src="/gallery/@(i.ToString() + ".png")"
+                     data-preview-width="600"
+                     data-preview-height="400"
+            title="@imageTitles[i-1]">
         </a>
     }
     </div>
@@ -151,8 +163,14 @@
     image.addEventListener('click', function(event) {
       event.preventDefault();
 
-      const url = this.getAttribute('href');
-      window.open(url, 'mywindow');
+      const img = this.querySelector('img');
+      img.src = img.getAttribute('data-preview-src');
+
+      img.removeAttribute('data-preview-src');
+      img.removeAttribute('data-preview-width');
+      img.removeAttribute('data-preview-height');
+
+      window.open(img.src, 'mywindow');
     });
   });
 </script>
