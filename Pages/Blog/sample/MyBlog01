@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    
+    <ul>
+        <li>
+            <h2><a href="/blog/sample">Sample Blog Post</a></h2>
+            <p class="text-muted">January 1, 2023</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan magna et mauris bibendum, vel convallis eros tincidunt....</p>
+            <a class="btn btn-secondary" href="/blog/sample">Read more</a>
+        </li>
+        <!-- Add more blog posts here -->
+    </ul>
+</body>
+</html>
